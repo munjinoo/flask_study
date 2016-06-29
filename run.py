@@ -1,6 +1,6 @@
 #-*- coding: utf-8 -*-
 
-from setting import redis_pass
+from setting import redis_pass, redis_port
 from flask import Flask, render_template, url_for, redirect, request
 import redis
 
