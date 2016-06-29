@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<form method="POST" action="/write/">
+    내용: <input type="text" name="text" /><br>
+    <input type="submit" value="전송" />
+</form>
+
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<ul>
+    <li>POSTS</li>
+    <ul>
+        {% for num in range(1, count + 1) %}
+        
+            <li><a href="{{url_for('show_post', num=num)}}">{{num}}</a></li>
+        
+        {% endfor %}
+    </ul>
+</ul>
+
+{% endblock %}
