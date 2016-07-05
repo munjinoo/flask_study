@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+{% if error %}
+<strong>Error: </strong>{{error}}<br>
+{% endif %}
+<form action="/join" method="POST">
+    <input type="TEXT" name="ID" />
+    <input type="PASSWORD" name="password" />
+    <input type="submit" name="가입" />
+</form>
+{% endblock %}

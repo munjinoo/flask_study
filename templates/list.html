@@ -5,12 +5,25 @@
 <ul>
     <li>POSTS</li>
     <ul>
-        {% for num in range(1, count + 1) %}
-        
-            <li><a href="{{url_for('show_post', num=num)}}">{{num}}</a></li>
-        
+        {% set how = 0 %}
+        {% for num in range(count - max * (page - 1), 0, -1) if how < max %}
+                <li><a href="{{ url_for('show_post', num = num) }}">{{num}}</a></li>
+            {% set how = how + 1 %}
         {% endfor %}
     </ul>
 </ul>
+<div class="select_pages">
+    {% if page != 1 %}
+        <a href="/post?page={{ page - 1 }}">prev</a>
+    {% endif %}
+
+    {% for num in range(1, last_page + 1) %}
+        <a href="/post?page={{ num }}">{{ num }}</a>
+    {% endfor %}
+
+    {% if page != last_page %}
+        <a href="/post?page={{ page + 1 }}">next</a>
+    {% endif %}
+</div>
 
 {% endblock %}

@@ -10,6 +10,13 @@
             <a href="/">Main</a>
             <a href="/post">Post</a>
             <a href="/write">Write</a>
+        {% if user %}
+            <form action="/logout" method="POST">
+                <input type="submit" value="Logout" />
+            </form>
+        {% else %}
+            <a href="/login">Login</a>
+        {% endif %}
         </div>
         {% block content %}
         {% endblock %}
